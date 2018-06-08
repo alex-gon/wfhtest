@@ -1,0 +1,32 @@
+import { Component, Input, OnInit } from '@angular/core'; // EventEmitter sends data between two components
+import { User } from '../shared/user.model';
+import { Entry } from '../shared/entry.model';
+
+@Component({
+    selector: 'app-query-result-table',
+    templateUrl: 'query-result-table.component.html',
+    styleUrls: ['query-result-table.component.css']
+})
+
+export class QueryResultTableComponent implements OnInit {
+    @Input() user: string;
+    @Input() date: string;
+    @Input() entries: Entry[];
+
+
+    // entriesFromUser: Entry[] = [];
+
+    ngOnInit() {
+        console.log(this.user, 'user');
+        console.log(this.date, 'date');
+        console.log(this.entries)
+
+
+
+        // if (this.user && !this.date) {
+        //     this.entriesFromUser = this.user.entries;
+        // } else if (this.user && this.date && this.entry) {
+           // this.entriesFromUser.push(this.entry);
+        // }
+    }
+}
